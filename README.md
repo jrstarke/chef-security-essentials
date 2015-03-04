@@ -5,8 +5,11 @@ Based on "[My First 5 Minutes On A Server; Or, Essentials Security for Linux Ser
 
 Requirements
 ------------
+
 ### Platforms
-- Ubuntu (due to upstream cookbooks)
+- Ubuntu
+
+
 
 Dependencies
 ------------
@@ -15,6 +18,7 @@ Dependencies
 * users
 * sudo
 * openssh
+* ufw
 
 The *ufw* cookbook includes a rule for allowing SSH from any by default. If you would like the ability to disable this, or restrict it to specific IP range, you will want to include the following cookbook in your Berksfile.
 
