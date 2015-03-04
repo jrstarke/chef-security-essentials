@@ -6,9 +6,7 @@ Based on "[My First 5 Minutes On A Server; Or, Essentials Security for Linux Ser
 Requirements
 ------------
 ### Platforms
-- Debian, Ubuntu
-- CentOS, Red Hat, Fedora
-- FreeBSD
+- Ubuntu (due to upstream cookbooks)
 
 Dependencies
 ------------
