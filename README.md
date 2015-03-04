@@ -79,12 +79,14 @@ Next you will want to configure your own firewall rules. By default we lock down
 
 You can configure the firewall, using the instructions from [ufw][3]. A rule that will allow HTTP looks like:
 
-```node['firewall']['rules'] = [
+```
+node['firewall']['rules'] = [
   {"http" => {
     "port" => "80"
     }
   }
-]```
+]
+```
 
 
 [1]: http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers
