@@ -9,9 +9,8 @@ depends 'fail2ban', '~> 2.1.2'
 depends 'users', '~> 1.7.0'
 depends 'sudo', '~> 2.6.0'
 depends 'openssh', '~> 1.3.4'
-depends 'chef-solo-search', '~> 0.5.1'
 depends 'ufw'
 
-%w{ debian ubuntu redhat centos scientific amazon oracle fedora}.each do |os|
+%w{ ubuntu }.each do |os|
   supports os
 end
