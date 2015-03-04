@@ -3,12 +3,14 @@ chef-security-essentials Cookbook
 
 Based on "[My First 5 Minutes On A Server; Or, Essentials Security for Linux Servers][1]" by Bryan Kennedy
 
+
 Requirements
 ------------
 
 ### Platforms
 - Ubuntu
 
+Currently the [ufw][3] cookbook is only listed as having support for Ubuntu, and since this cookbook uses it, we can't do any better.
 
 
 Dependencies
