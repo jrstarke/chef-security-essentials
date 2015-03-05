@@ -32,3 +32,9 @@ include_recipe "openssh"
 
 # Configure basic firewall with UFW
 include_recipe "ufw"
+
+# Configure automatic security updates
+include_recipe "apt-periodic"
+
+# Configure log notifications
+include_recipe "logwatch"

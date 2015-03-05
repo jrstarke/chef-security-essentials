@@ -29,3 +29,20 @@ default['firewall']['rules'] = [
 normal['openssh']['server']['permit_root_login'] = 'no'
 normal['openssh']['server']['password_authentication'] = 'no'
 normal['openssh']['server']['match']['Group sysadmin']['AllowUsers'] = '*'
+
+# Setup update notification emails
+default['security_essentials']['mail'] = nil
+if node['security_essentials']['mail']
+	normal['apt_periodic']['unattended_upgrades']['mail'] = node['security_essentials']['mail']
+	normal['logwatch']['email'] = node['security_essentials']['mail']
+end
+
+# Set up automatic security updates
+normal['apt_periodic']['update_interval'] = "1"
+normal['apt_periodic']['download_upgradeable_interval'] = "1"
+normal['apt_periodic']['autoclean_interval'] = "7"
+normal['apt_periodic']['unattended_upgrade_interval'] = "1"
+
+# Setup log notifications
+normal['logwatch']['output'] = "mail"
+normal['logwatch']['detail'] = "high"
