@@ -88,6 +88,15 @@ node['firewall']['rules'] = [
 ]
 ```
 
+Upgrade and Log notifications
+-----------------------------
+
+This cookbook configures both Unattended Upgrades, and logwatch. Both of these support email notifications. To make configuring these easier, you can use the following node attribute, which will set both attributes:
+
+`node['security_essentials']['mail'] = "your_email@example.com"`
+
+This will use the same email address for both 
+
 
 [1]: http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers
 [2]: https://github.com/opscode-cookbooks/users
