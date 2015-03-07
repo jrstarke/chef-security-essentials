@@ -1,3 +1,7 @@
+
+# 0.1.1
+Minor change to the placement of the convenience email setup, to fix upstream defaults.
+
 # 0.1.0
 
 Initial release of chef-security-essentials. 
