@@ -33,6 +33,12 @@ include_recipe "openssh"
 # Configure basic firewall with UFW
 include_recipe "ufw"
 
+# Convenience for setting a single email address for both notifications
+if node['security_essentials']['mail']
+  node.normal['apt_periodic']['unattended_upgrades']['mail'] = node['security_essentials']['mail']
+  node.normal['logwatch']['email'] = node['security_essentials']['mail']
+end
+
 # Configure automatic security updates
 include_recipe "apt-periodic"
 

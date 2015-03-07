@@ -32,10 +32,6 @@ normal['openssh']['server']['match']['Group sysadmin']['AllowUsers'] = '*'
 
 # Setup update notification emails
 default['security_essentials']['mail'] = nil
-if node['security_essentials']['mail']
-	normal['apt_periodic']['unattended_upgrades']['mail'] = node['security_essentials']['mail']
-	normal['logwatch']['email'] = node['security_essentials']['mail']
-end
 
 # Set up automatic security updates
 normal['apt_periodic']['update_interval'] = "1"
