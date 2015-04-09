@@ -3,7 +3,7 @@ maintainer       'Jamie Starke'
 maintainer_email 'github@jamiestarke.com'
 license          'Apache 2.0'
 description      'Installs/Configures chef-security-essentials'
-version          '0.1.1'
+version          '0.1.2'
 
 depends 'fail2ban', '~> 2.1.2'
 depends 'users', '~> 1.7.0'
