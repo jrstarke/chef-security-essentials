@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-normal['firewall']['default_ssh'] = false
+normal['firewall']['default_ssh_rule'] = false
 default['firewall']['rules'] = [
     {"allow ssh" => {
         "port" => "22"
