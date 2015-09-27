@@ -19,38 +19,38 @@
 
 default['security_essentials']['firewall']['open'] = ['ssh']
 
-default['security_essentials']['firewall']['rules']['ssh'] = {
+default['security_essentials']['firewall']['rule_definitions']['ssh'] = {
 	"ssh" => {
 		"port" => "22"
 	}
 }
 
-default['security_essentials']['firewall']['rules']['zerotier'] = {
+default['security_essentials']['firewall']['rule_definitions']['zerotier'] = {
 	"zerotier" => {
 		"port" => "9993",
 		"protocol"=> "udp"
 	}
 }
 
-default['security_essentials']['firewall']['rules']['http'] = {
+default['security_essentials']['firewall']['rule_definitions']['http'] = {
 	"http" => {
 		"port" => "80"
 	}
 }
 
-default['security_essentials']['firewall']['rules']['https'] = {
+default['security_essentials']['firewall']['rule_definitions']['https'] = {
 	"https" => {
 		"port" => "443"
 	}
 }
 
-default['security_essentials']['firewall']['rules']['mongo'] = {
+default['security_essentials']['firewall']['rule_definitions']['mongo'] = {
 	"mongo" => {
 		"port" => "27017"
 	}
 }
 
-default['security_essentials']['firewall']['rules']['redis'] = {
+default['security_essentials']['firewall']['rule_definitions']['redis'] = {
 	"redis" => {
 		"port" => "6379"
 	}

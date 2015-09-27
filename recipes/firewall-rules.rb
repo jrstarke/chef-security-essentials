@@ -19,9 +19,9 @@
 
 firewall_rules = []
 
-node['security_essentials']['firewall']['open'].each do | protocol|
-  if node['security_essentials']['firewall']['rules'].include?(protocol)
-  	firewall_rules.push(node['security_essentials']['firewall']['rules'][protocol])
+node['security_essentials']['firewall']['open'].each do | service |
+  if node['security_essentials']['firewall']['rule_definitions'].include?(service)
+  	firewall_rules.push(node['security_essentials']['firewall']['rule_definitions'][service])
   end
 end
 
