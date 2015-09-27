@@ -1,3 +1,5 @@
+# 0.1.3
+Added the ability to flag specific asspects of the cookbook off.
 
 # 0.1.1
 Minor change to the placement of the convenience email setup, to fix upstream defaults.

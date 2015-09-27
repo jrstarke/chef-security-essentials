@@ -20,27 +20,22 @@
 # Based on the recommendations of Bryan Kennedy from his post
 # http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers
 
-# Include the LWRP and create the basic sysadmins group
-include_recipe "users"
-include_recipe "users::sysadmins"
-
-# Set the sysadmins group to have sudo privileges
-include_recipe "sudo"
-
-# Configure SSH to disable restrict access
-include_recipe "openssh"
-
-# Configure basic firewall with UFW
-include_recipe "ufw"
-
-# Convenience for setting a single email address for both notifications
-if node['security_essentials']['mail']
-  node.normal['apt_periodic']['unattended_upgrades']['mail'] = node['security_essentials']['mail']
-  node.normal['logwatch']['email'] = node['security_essentials']['mail']
+if node['security_essentials']['features']['users']
+	include_recipe "security-essentials::users"
 end
 
-# Configure automatic security updates
-include_recipe "apt-periodic"
+if node['security_essentials']['features']['ssh']
+	include_recipe "security-essentials::ssh"
+end
 
-# Configure log notifications
-include_recipe "logwatch"
+if node['security_essentials']['features']['firewall']
+	include_recipe "security-essentials::firewall"
+end
+
+if node['security_essentials']['features']['security_updates']
+	include_recipe "security-essentials::security-updates"
+end
+
+if node['security_essentials']['features']['logwatch']
+	include_recipe "security-essentials::logwatch"
+end

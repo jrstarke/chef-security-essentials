@@ -17,28 +17,30 @@
 # limitations under the License.
 #
 
-normal['firewall']['default_ssh_rule'] = false
-default['firewall']['rules'] = [
+# Setup update notification emails
+default['security_essentials']['features']['users'] = true
+default['security_essentials']['features']['ssh'] = true
+default['security_essentials']['features']['firewall'] = true
+default['security_essentials']['features']['security_updates'] = true
+default['security_essentials']['features']['logwatch'] = true
+
+default['security_essentials']['mail'] = nil
+
+default['security_essentials']['ssh']['permit_root_login'] = false
+default['security_essentials']['ssh']['password_authentication'] = false
+default['security_essentials']['ssh']['allow_sysadmins'] = true
+
+default['security_essentials']['firewall']['rules'] = [
     {"allow ssh" => {
         "port" => "22"
         }
     }
 ]
 
-# Set up properties for SSH
-normal['openssh']['server']['permit_root_login'] = 'no'
-normal['openssh']['server']['password_authentication'] = 'no'
-normal['openssh']['server']['match']['Group sysadmin']['AllowUsers'] = '*'
+default['security_essentials']['security_updates']['update_interval'] = '1'
+default['security_essentials']['security_updates']['download_upgradable_interval'] = '1'
+default['security_essentials']['security_updates']['autoclean_interval'] = '7'
+default['security_essentials']['security_updates']['unattended_upgrade_interval'] = '1'
 
-# Setup update notification emails
-default['security_essentials']['mail'] = nil
-
-# Set up automatic security updates
-normal['apt_periodic']['update_interval'] = "1"
-normal['apt_periodic']['download_upgradeable_interval'] = "1"
-normal['apt_periodic']['autoclean_interval'] = "7"
-normal['apt_periodic']['unattended_upgrade_interval'] = "1"
-
-# Setup log notifications
-normal['logwatch']['output'] = "mail"
-normal['logwatch']['detail'] = "high"
+default['security_essentials']['logwatch']['output'] = "mail"
+default['security_essentials']['logwatch']['detail'] = "high"
