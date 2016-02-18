@@ -20,6 +20,10 @@
 # Based on the recommendations of Bryan Kennedy from his post
 # http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers
 
+if node['security_essentials']['features']['fail2ban']
+	include_recipe "security-essentials::fail2ban"
+end
+
 if node['security_essentials']['features']['users']
 	include_recipe "security-essentials::users"
 end

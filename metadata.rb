@@ -13,6 +13,7 @@ depends 'ufw', '~> 0.7.4'
 depends 'firewall', '~> 1.2.0'
 depends 'apt-periodic', '~> 0.2.0'
 depends 'logwatch', '~> 1.1.0'
+depends 'iptables', '~> 1.0.0'
 
 %w{ ubuntu }.each do |os|
   supports os

@@ -18,6 +18,7 @@
 #
 
 # Setup update notification emails
+default['security_essentials']['features']['fail2ban'] = true
 default['security_essentials']['features']['users'] = true
 default['security_essentials']['features']['ssh'] = true
 default['security_essentials']['features']['firewall'] = true

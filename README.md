@@ -28,6 +28,11 @@ The *ufw* cookbook includes a rule for allowing SSH from any by default. If you 
 
 If you are using chef-solo, you will want to be sure to include the `chef-solo-search` cookbook in your Berksfile, or downstream cookbook dependencies.
 
+Fail2Ban
+-----
+
+This cookbook uses the defaults from the [fail2ban][4] cookbook, which include 5 fails over a 10 minute period, which would result in a 5 minute ip ban. This will significantly slow down any attacker trying to bruteforce their way into the server.
+
 
 Users
 -----
