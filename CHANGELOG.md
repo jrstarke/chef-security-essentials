@@ -1,3 +1,7 @@
+# 0.4.0
+
+Added fail2ban, because it wasn't actually set up before
+
 # 0.3.0
 
 Added the ability to flag specific asspects of the cookbook off.
