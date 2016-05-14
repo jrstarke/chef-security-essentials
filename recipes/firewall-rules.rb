@@ -19,10 +19,10 @@
 
 firewall_rules = []
 
-node['security_essentials']['firewall']['open'].each do | service |
-  if node['security_essentials']['firewall']['rule_definitions'].include?(service)
-  	firewall_rules.push(node['security_essentials']['firewall']['rule_definitions'][service])
+node['security_essentials']['firewall']['rule_definitions'].each do | protocol_key, rule |
+  if node['security_essentials']['firewall']['open'].include?(protocol_key)
+    firewall_rules.push(rule)
   end
 end
 
-node.default['firewall']['rules'] = firewall_rules
+node.default['security_essentials']['firewall']['rules'] = firewall_rules
